@@ -1,0 +1,58 @@
+﻿@model List<Experience>
+@{
+    ViewData["Title"] = "ExperienceList";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="main-panel">
+	<div class="content">
+		<div class="container-fluid">
+			<h4 class="page-title">Experiences</h4>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Experience List</div>
+						</div>
+						<div class="card-body">
+							<div class="card-sub">
+								You can perform experiences-related operations below.:
+							</div>
+							<table class="table mt-3">
+								<thead>
+									<tr>
+										<th scope="col">ID</th>
+										<th scope="col">Head</th>
+										<th scope="col">Title</th>
+										<th scope="col">Date</th>
+										<th scope="col">Delete</th>
+										<th scope="col">Update</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model)
+									{
+										<tr>
+											<td>@item.ExperienceId</td>
+											<td>@item.Head</td>
+											<td>@item.Title</td>
+											<td>@item.Date</td>
+											<td> <a class="btn btn-danger" href="/Experience/ExperienceDelete/@item.ExperienceId">Delete</a> </td>
+											<td> <a class="btn btn-success" href="/Experience/ExperienceUpdate/@item.ExperienceId">Update</a> </td>
+										</tr>
+									}
+								
+								
+								</tbody>
+							</table>
+							<a href="/Experience/ExperienceCreate" class="btn btn-info">Experience Add</a>
+						</div>
+					</div>
+				
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	
+</div>

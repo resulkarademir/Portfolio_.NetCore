@@ -1,0 +1,16 @@
+﻿@model List<Portfolio_.NetCore.DAL.Entities.SocialMedia>
+
+<ul class="footer-social">
+
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="@item.Url">
+                <i class="im im-@item.Icon" aria-hidden="true"></i>
+                <span>@item.Title</span>
+            </a>
+        </li>
+    }
+
+
+</ul>
