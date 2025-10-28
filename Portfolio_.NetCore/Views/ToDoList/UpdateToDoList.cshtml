@@ -1,0 +1,42 @@
+﻿@model ToDoList
+@{
+    ViewData["Title"] = "ToDoListUpdate";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+<div class="main-panel">
+    <div class="content">
+        <div class="container-fluid">
+            <h4 class="page-title">ToDoList</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">ToDoList Update</div>
+                        </div>
+                        <div class="card-body">
+
+                            <form method="post">
+                                <input type="hidden" asp-for="ToDoListId" />
+                                <label>ToDoList Title</label>
+                                <input type="text" asp-for="Title" class="form-control" />
+                                <br />
+                                <label>ToDoList Date</label>
+                                <input type="text" asp-for="Date" class="form-control" />
+                                <br />
+                                <label>ToDoList ImageUrl</label>
+                                <input type="text" asp-for="ImageUrl" class="form-control" />
+                                <br />
+                                <button class="btn btn-primary"> ToDoList Update</button>
+                            </form>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

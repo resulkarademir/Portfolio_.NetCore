@@ -39,7 +39,7 @@
 											<td>@item.NameSurname</td>
 											<td>@item.Subject</td>
 											<td>@item.SendDate.ToShortDateString()</td>
-											<td> <a class="btn btn-warning" href="/message/MessageOpen/@item.MessageId">Open</a> </td>
+											<td> <a class="btn btn-success" href="/message/MessageDetail/@item.MessageId">Open</a> </td>
 											@if (item.IsRead==true)
 											{
 												<td> <a class="btn btn-dark" href="/message/MessageChangeStatusFalse/@item.MessageId">Change Unreaded</a> </td>
@@ -47,7 +47,7 @@
 											}
 											else
 											{
-												<td> <a class="btn btn-dark" href="/message/MessageChangeStatusTrue/@item.MessageId">Change Readed</a> </td>
+												<td> <a class="btn btn-warning" href="/message/MessageChangeStatusTrue/@item.MessageId">Change Readed</a> </td>
 
 											}
 
@@ -58,7 +58,6 @@
 								
 								</tbody>
 							</table>
-							<a href="/message/ExperienceCreate" class="btn btn-info">Experience Add</a>
 						</div>
 					</div>
 				

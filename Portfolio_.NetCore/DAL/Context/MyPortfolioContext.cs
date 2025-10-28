@@ -22,5 +22,6 @@ namespace Portfolio_.NetCore.DAL.Context
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Statistic> Statistics { get; set; }
-    }
+        public DbSet<ToDoList> ToDoLists { get; set; }
+	}
 }

@@ -25,13 +25,24 @@ namespace Portfolio_.NetCore.Controllers
 
 		public IActionResult MessageChangeStatusFalse(int id)
 		{
-
 			var value = _context.Messages.Find(id);
 			value.IsRead = false;
 			_context.SaveChanges();
-
 			return RedirectToAction("Inbox");
+		}
 
+		public IActionResult MessageDelete(int id)
+		{
+			var value = _context.Messages.Find(id);
+			_context.Messages.Remove(value);
+			_context.SaveChanges();
+			return RedirectToAction("Inbox");
+		}
+
+		public IActionResult MessageDetail(int id)
+		{
+			var value=_context.Messages.Find(id);
+			return View(value); 
 		}
 	}
 }
