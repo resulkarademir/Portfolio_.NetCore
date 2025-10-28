@@ -1,0 +1,67 @@
+﻿@model List<Contact>
+@{
+    ViewData["Title"] = "FeatureList";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content">
+        <div class="container-fluid">
+            <h4 class="page-title">Contact</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Contact List</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-sub">
+                                You can perform Contact-related operations below.:
+                            </div>
+                            <table class="table mt-3">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Phone1</th>
+                                        <th scope="col">Phone2</th>
+                                        <th scope="col">Email1</th>
+                                        <th scope="col">Email2</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Delete</th>
+                                        <th scope="col">Update</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ContactId</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Description</td>
+                                            <td>@item.Phone1</td>
+                                            <td>@item.Phone2</td>
+                                            <td>@item.Email1</td>
+                                            <td>@item.Email2</td>
+                                            <td>@item.Address</td>
+
+                                            <td> <a class="btn btn-danger" href="/Contact/ContactDelete/@item.ContactId">Delete</a> </td>
+                                            <td> <a class="btn btn-success" href="/Contact/ContactUpdate/@item.ContactId">Update</a> </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                            <a href="/Contact/ContactCreate" class="btn btn-info">Contact Add</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

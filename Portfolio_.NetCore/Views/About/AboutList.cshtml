@@ -1,0 +1,58 @@
+﻿@model List<About>
+@{
+	ViewData["Title"] = "AboutList";
+	Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="main-panel">
+	<div class="content">
+		<div class="container-fluid">
+			<h4 class="page-title">About</h4>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">About List</div>
+						</div>
+						<div class="card-body">
+							<div class="card-sub">
+								You can perform About-related operations below.:
+							</div>
+							<table class="table mt-3">
+								<thead>
+									<tr>
+										<th scope="col">ID</th>
+									    <th scope="col">Title</th>
+										<th scope="col">SubDescription</th>
+										<th scope="col">Details</th>
+										<th scope="col">Delete</th>
+										<th scope="col">Update</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model)
+									{
+										<tr>
+											<td>@item.AboutId</td>
+											<td>@item.Title</td>
+											<td>@item.SubDescription</td>
+											<td>@item.Details</td>
+											<td> <a class="btn btn-danger" href="/About/AboutDelete/@item.AboutId">Delete</a> </td>
+											<td> <a class="btn btn-success" href="/About/AboutUpdate/@item.AboutId">Update</a> </td>
+										</tr>
+									}
+
+
+								</tbody>
+							</table>
+							<a href="/About/AboutCreate" class="btn btn-info">About Add</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>

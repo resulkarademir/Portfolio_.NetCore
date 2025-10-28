@@ -1,0 +1,39 @@
+﻿@model Feature
+@{
+    ViewData["Title"] = "FeatureCreate";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+<div class="main-panel">
+    <div class="content">
+        <div class="container-fluid">
+            <h4 class="page-title">Features</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Feature List</div>
+                        </div>
+                        <div class="card-body">
+
+                            <form method="post">
+
+                                <label>Feature Head</label>
+                                <input type="text" asp-for="Title" class="form-control" />
+                                <br />
+                                <label>Feature Title</label>
+                                <input type="text" asp-for="Description" class="form-control" />
+                                <br />
+                                <button class="btn btn-primary"> Feature Add</button>
+                            </form>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

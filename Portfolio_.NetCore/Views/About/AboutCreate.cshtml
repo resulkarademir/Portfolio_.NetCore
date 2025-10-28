@@ -1,0 +1,42 @@
+﻿@model About
+@{
+    ViewData["Title"] = "AboutCreate";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+<div class="main-panel">
+    <div class="content">
+        <div class="container-fluid">
+            <h4 class="page-title">About</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">About List</div>
+                        </div>
+                        <div class="card-body">
+
+                            <form method="post">
+
+                                <label>About Title</label>
+                                <input type="text" asp-for="Title" class="form-control" />
+                                <br />
+                                <label>About SubDescription</label>
+                                <input type="text" asp-for="SubDescription" class="form-control" />
+                                <br />
+                                <label>About Details</label>
+                                <input type="text" asp-for="Details" class="form-control" />
+                                <br />
+                                <button class="btn btn-primary"> About Add</button>
+                            </form>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

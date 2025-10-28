@@ -1,0 +1,71 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+
+<div class="main-panel">
+	<div class="content">
+		<div class="container-fluid">
+			<h4 class="page-title">Experiences</h4>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Inbox List</div>
+						</div>
+						<div class="card-body">
+							<div class="card-sub">
+								You can perform Inbox-related operations below.:
+							</div>
+							<table class="table mt-3">
+								<thead>
+									<tr>
+										<th scope="col">ID</th>
+										<th scope="col">Sender</th>
+										<th scope="col">Subject</th>
+										<th scope="col">Date</th>
+										<th scope="col">Open Message</th>
+										<th scope="col">Status</th>
+										<th scope="col">Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model)
+									{
+										<tr>
+											<td>@item.MessageId</td>
+											<td>@item.NameSurname</td>
+											<td>@item.Subject</td>
+											<td>@item.SendDate.ToShortDateString()</td>
+											<td> <a class="btn btn-warning" href="/message/MessageOpen/@item.MessageId">Open</a> </td>
+											@if (item.IsRead==true)
+											{
+												<td> <a class="btn btn-dark" href="/message/MessageChangeStatusFalse/@item.MessageId">Change Unreaded</a> </td>
+
+											}
+											else
+											{
+												<td> <a class="btn btn-dark" href="/message/MessageChangeStatusTrue/@item.MessageId">Change Readed</a> </td>
+
+											}
+
+											<td> <a class="btn btn-danger" href="/message/MessageDelete/@item.MessageId">Delete</a> </td>
+										</tr>
+									}
+								
+								
+								</tbody>
+							</table>
+							<a href="/message/ExperienceCreate" class="btn btn-info">Experience Add</a>
+						</div>
+					</div>
+				
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	
+</div>
