@@ -1,0 +1,53 @@
+﻿@model Portfolio
+@{
+    ViewData["Title"] = "PortfolioCreate";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+<div class="main-panel">
+    <div class="content">
+        <div class="container-fluid">
+            <h4 class="page-title">Portfolios</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Portfolio Add</div>
+                        </div>
+                        <div class="card-body">
+
+                            <form method="post">
+
+                                
+                                <label>Portfolio Title</label>
+                                <input type="text" asp-for="Title" class="form-control" />
+                                <br />
+                                <label>Portfolio Subtitle</label>
+                                <input type="text" asp-for="SubTitle" class="form-control" />
+                                <br />
+                                <label>Portfolio Description</label>
+                                <input type="text" asp-for="Description" class="form-control" />
+                                <br />
+                                <label>Portfolio ImageUrl</label>
+                                <input type="text" asp-for="ImageUrl" class="form-control" />
+                                <br />
+                                <label>Portfolio SmallImageUrl</label>
+                                <input type="text" asp-for="SmallImageUrl" class="form-control" />
+                                <br />
+                                <label>Portfolio BigImageUrl</label>
+                                <input type="text" asp-for="BigImageUrl" class="form-control" />
+                                <br />
+                          
+                                <button class="btn btn-primary"> Portfolio Add</button>
+                            </form>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

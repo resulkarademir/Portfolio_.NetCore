@@ -2,7 +2,7 @@
 
 namespace Portfolio_.NetCore.Controllers
 {
-	public class IconController : Controller
+	public class DashboardController : Controller
 	{
 		public IActionResult Index()
 		{

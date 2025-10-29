@@ -9,9 +9,9 @@
         public string ImageUrl { get; set; }
         public string SmallImageUrl { get; set; }
         public string BigImageUrl { get; set; }
-        public string HomeTitle { get; set; }       
-        public string HomeSubTitle { get; set; }
-        public string HomeDescription { get; set; }
+        public string? HomeTitle { get; set; }       
+        public string? HomeSubTitle { get; set; }
+        public string? HomeDescription { get; set; }
 
     }
 }

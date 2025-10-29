@@ -1,0 +1,78 @@
+﻿@model List<Portfolio>
+@{
+	ViewData["Title"] = "ExperienceList";
+	Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="main-panel">
+	<div class="content">
+		<div class="container-fluid">
+			<h4 class="page-title">Portfolio</h4>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Portfolio List</div>
+						</div>
+                        <div class="card-body">
+                            <div class="card-sub">
+                                You can perform Portfolio-related operations below:
+                            </div>
+
+                            <!-- Scrollable tablo kapsayıcısı -->
+                            <div class="table-responsive">
+                                <table class="table mt-3 table-bordered table-striped align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Title</th>
+                                            <th>SubTitle</th>
+                                            <th>Description</th>
+                                            <th>ImageUrl</th>
+                                            <th>SmallImageUrl</th>
+                                            <th>BigImageUrl</th>
+                                            <th>HomeTitle</th>
+                                            <th>HomeSubTitle</th>
+                                            <th>HomeDescription</th>
+                                            <th>Delete</th>
+                                            <th>Update</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.PortfolioId</td>
+                                                <td>@item.Title</td>
+                                                <td>@item.SubTitle</td>
+                                                <td>@item.Description</td>
+                                                <td>@item.ImageUrl</td>
+                                                <td>@item.SmallImageUrl</td>
+                                                <td>@item.BigImageUrl</td>
+                                                <td>@item.HomeTitle</td>
+                                                <td>@item.HomeSubTitle</td>
+                                                <td>@item.HomeDescription</td>
+                                                <td>
+                                                    <a class="btn btn-danger btn-sm" href="/Portfolio/PortfolioDelete/@item.PortfolioId">Delete</a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-success btn-sm" href="/Portfolio/PortfolioUpdate/@item.PortfolioId">Update</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <a href="/Portfolio/PortfolioCreate" class="btn btn-info mt-3">Add New Portfolio</a>
+                        </div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
