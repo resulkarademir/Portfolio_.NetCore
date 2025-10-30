@@ -1,0 +1,45 @@
+﻿@model SocialMedia
+
+@{
+    ViewData["Title"] = "SocialMediaUpdate";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+<div class="main-panel">
+    <div class="content">
+        <div class="container-fluid">
+            <h4 class="page-title">Socia lMedia</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">SocialMedia Create</div>
+                        </div>
+                        <div class="card-body">
+
+                            <form method="post">
+                                <input type="Hidden" asp-for="SocialMediaId"   />
+
+                                <label>SocialMedia Title</label>
+                                <input type="text" asp-for="Title" class="form-control" />
+                                <br />
+                                <label>SocialMedia Url</label>
+                                <input type="text" asp-for="Url" class="form-control" />
+                                <br />
+                                <label>SocialMedia Icon</label>
+                                <input type="text" asp-for="Icon" class="form-control" />
+                                <br />
+
+                                <button class="btn btn-primary"> SocialMedia Update</button>
+                            </form>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

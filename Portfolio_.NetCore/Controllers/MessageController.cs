@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using Portfolio_.NetCore.DAL.Context;
 
 namespace Portfolio_.NetCore.Controllers
 {
-	public class MessageController : Controller
+    [Authorize]
+
+    public class MessageController : Controller
 	{
 		MyPortfolioContext _context =new MyPortfolioContext();
 		public IActionResult Inbox()

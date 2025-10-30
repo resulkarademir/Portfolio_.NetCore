@@ -4,8 +4,10 @@
 
     @foreach (var item in Model)
     {
+        var fullUrl = item.Url.StartsWith("http") ? item.Url : "https://" + item.Url;
+
         <li>
-            <a href="@item.Url">
+            <a href="@fullUrl" target="_blank" rel="noopener noreferrer">
                 <i class="im im-@item.Icon" aria-hidden="true"></i>
                 <span>@item.Title</span>
             </a>

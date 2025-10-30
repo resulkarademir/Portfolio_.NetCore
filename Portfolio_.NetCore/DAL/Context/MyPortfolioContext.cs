@@ -23,5 +23,6 @@ namespace Portfolio_.NetCore.DAL.Context
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Statistic> Statistics { get; set; }
         public DbSet<ToDoList> ToDoLists { get; set; }
-	}
+        public DbSet<Login> Logins { get; set; }
+    }
 }

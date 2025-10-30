@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Portfolio_.NetCore.DAL.Context;
 
 namespace Portfolio_.NetCore.Controllers
 {
+    [Authorize]
+
     public class StatisticController : Controller
     {
         MyPortfolioContext _context = new MyPortfolioContext();

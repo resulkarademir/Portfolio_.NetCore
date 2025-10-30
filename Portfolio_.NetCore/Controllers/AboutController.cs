@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Portfolio_.NetCore.DAL.Context;
 using Portfolio_.NetCore.DAL.Entities;
 
 namespace Portfolio_.NetCore.Controllers
 {
+    [Authorize]
+
     public class AboutController : Controller
     {
+
 
         MyPortfolioContext _context =new MyPortfolioContext();
         public IActionResult AboutList()
