@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio_.NetCore.DAL.Context;
 using Portfolio_.NetCore.DAL.Entities;
@@ -34,6 +35,14 @@ namespace Portfolio_.NetCore.Controllers
 
             }
             return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("SignIn","Login");
+      
         }
     }
 }
